@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BLIN OS: El sistema operativo innovador con enfoque en la doble capa de seguridad, diseño Glassmorphism y rendimiento optimizado. Descubre la beta.">
+    <meta name="keywords" content="BLIN OS, Sistema Operativo, Glassmorphism, Seguridad, Diseño UI/UX, Beta, Tecnologia">
+    <meta name="author" content="BLIN OS Team">
+    
+    <title>BLIN OS | Seguridad, Claridad y Diseño de Última Generación</title>
+    
+    <link rel="icon" type="image/png" href="img/Logo user.png"> 
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <header id="navbar" role="banner">
+        <div class="logo">
+            <img src="img/Logo user.png" alt="BLIN OS Logo" class="logo-img">
+            BLIN<span class="logo-dot">.OS</span>
+        </div>
+        <nav role="navigation" aria-label="Navegación principal de secciones">
+            <a href="#inicio">Inicio</a>
+            <a href="#caracteristicas">Características</a>
+            <a href="#diseno">Diseño</a>
+            <a href="#seguridad">Seguridad</a>
+            <button id="beta-btn" aria-label="Acceso a la versión Beta de BLIN OS">Acceso Beta</button>
+        </nav>
+        <button id="menu-toggle" aria-expanded="false" aria-controls="main-menu" class="hidden-on-desktop">
+            &#9776;
+        </button>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero section-padding" role="region" aria-label="Presentación de BLIN OS">
+            <div class="hero-content">
+                <h1>BLIN OS: El Sistema Operativo con tu <span class="highlight">seguridad en mente</span>.</h1>
+                <p class="subtitle">Diseño intuitivo, rendimiento excepcional y el doble de protección de datos.</p>
+                <div class="cta-group">
+                    <button class="cta-btn primary" id="main-cta-btn">Descubre BLIN</button>
+                    <a href="#" class="cta-link beta-link" aria-label="Acceso a la versión 1.0.0 Beta">Acceso Beta (v1.0.0) →</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                 <img src="img/Capa 5 Pantalla de inicio.png" alt="Interfaz futurista de la pantalla de inicio de BLIN OS con diseño Glassmorphism" loading="eager">
+                 <div class="glass-overlay"></div>
+            </div>
+        </section>
+
+        <section id="seguridad" class="security-section section-padding" role="region" aria-label="Características de Seguridad">
+            <div class="security-content">
+                <p class="tagline">Cifrado y Autenticación de Próxima Generación</p>
+                <h2>La Seguridad No Es <span class="highlight-secondary">Negociable</span></h2>
+                <p class="section-description">El núcleo de BLIN está construido con la seguridad como pilar. Utilizamos cifrado de vanguardia, métodos de autenticación avanzados y una arquitectura de capas para proteger tu información.</p>
+                <div class="security-features">
+                    <div class="security-card">
+                        <img src="img/Capa 0 Bloqueo.png" alt="Pantalla de bloqueo moderna de BLIN OS" class="secure-screen" loading="lazy">
+                        <h3>Capa 0: Bloqueo Cero-Confianza</h3>
+                        <p>La primera línea de defensa. Una pantalla de bloqueo moderna, elegante y casi impenetrable que exige máxima verificación.</p>
+                    </div>
+                    <div class="security-card">
+                        <img src="img/Logo secure.png" alt="Ícono de escudo de seguridad de BLIN" class="secure-logo">
+                        <h3>Doble Autenticación Biométrica</h3>
+                        <p>Acceso seguro mediante doble factor biométrico (Huella + Facial o PIN). Tu dispositivo, solo tuyo, garantizado por hardware.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="caracteristicas" class="layers-section section-padding" role="region" aria-label="Estructura de Capas de la Interfaz de Usuario">
+            <p class="tagline">Arquitectura Modular</p>
+            <h2>Experiencia de Usuario en Capas Didácticas</h2>
+            <p class="section-description">BLIN OS ha sido diseñado en una estructura visual modular y clara, accesible para usuarios de todo tipo. El sistema trabaja en 4 capas para una interacción fluida y sin interrupciones.</p>
+
+            <div class="feature-grid">
+                <article class="feature-card" data-layer="Capa 1">
+                    <img src="img/Capa 1 Widgets.png" alt="Muestra de Widgets anclados de BLIN OS" loading="lazy">
+                    <div class="card-content">
+                        <h3>Capa 1: Widgets Anclados</h3>
+                        <p>Información esencial al instante. Clima, tareas y monitor de sistema siempre a la vista con un diseño Glassmorphism pulido.</p>
+                    </div>
+                </article>
+                <article class="feature-card" data-layer="Capa 2">
+                    <img src="img/CAPA 2.png" alt="Ventanas de aplicación flotantes en BLIN OS" loading="lazy">
+                    <div class="card-content">
+                        <h3>Capa 2: Ventanas de Aplicación</h3>
+                        <p>Aplicaciones flotantes con controles claros, minimizando la distracción y maximizando la concentración en tu flujo de trabajo.</p>
+                    </div>
+                </article>
+                <article class="feature-card" data-layer="Capa 3">
+                    <img src="img/CAPA 3 navegacíon de archivos.png" alt="Explorador de archivos intuitivo de BLIN OS" loading="lazy">
+                    <div class="card-content">
+                        <h3>Capa 3: Navegación Clara</h3>
+                        <p>Explorador de archivos intuitivo con miniaturas grandes y acceso rápido a la nube. Encuentra todo en un BLIN de ojos.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="diseno" class="design-section section-padding" role="region" aria-label="Filosofía de Diseño y Capa de Inteligencia Artificial">
+            <div class="design-content">
+                <p class="tagline">Estética y Rendimiento</p>
+                <h2>Glassmorphism y Claridad Visual</h2>
+                <p>La interfaz gráfica de BLIN utiliza el efecto Glassmorphism de forma sutil, combinando fondos desenfocados, transparencia y colores claros para crear un entorno de trabajo futurista que reduce la fatiga visual.</p>
+                <ul class="design-list">
+                    <li><span class="icon" aria-hidden="true">◊</span> Diseño Intuitivo: Flujo de trabajo pensado para la eficiencia, ideal para profesionales y principiantes.</li>
+                    <li><span class="icon" aria-hidden="true">◊</span> Paleta Armoniosa: Colores claros y vibrantes que aportan energía y claridad sin saturar.</li>
+                    <li><span class="icon" aria-hidden="true">◊</span> Capa 4: Sugerencias Inteligentes: La IA de BLIN (Capa 4) te ayuda proactivamente a gestionar tareas, dependencias y optimizar recursos.</li>
+                </ul>
+            </div>
+            <div class="design-image">
+                <img src="img/Capa 4 Sugerencias de ia.png" alt="Muestra de la Capa 4 de Sugerencias de IA en BLIN OS" loading="lazy">
+            </div>
+        </section>
+    </main>
+    
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <p class="copyright">© 2025 BLIN OS. Todos los derechos reservados. | Diseñado para la era digital.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Política de Privacidad">Privacidad</a>
+                <a href="#" aria-label="Términos y Condiciones">Términos</a>
+                <a href="#" aria-label="Contactar con el equipo de BLIN OS">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

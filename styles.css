@@ -1,0 +1,632 @@
+/* ====================================
+   1. VARIABLES Y RESET PROFESIONAL
+   ==================================== */
+:root {
+    /* Paleta de Colores Moderna */
+    --color-primary: #0077ff;       /* Azul Enérgico */
+    --color-secondary: #00bcd4;     /* Cian Vivo */
+    --color-accent-pink: #ff0077;   /* Pink para acentos sutiles */
+    
+    --color-text-dark: #1e293b;     /* Azul Oscuro (casi negro) */
+    --color-text-light: #ffffff;
+    --color-background-light: #f8fafc; /* Fondo muy claro, casi blanco */
+    --color-background-dark: #0f172a;  /* Fondo oscuro para seguridad/footer */
+    
+    /* Gradientes */
+    --gradient-primary: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    --gradient-hover: linear-gradient(90deg, #0099ff 0%, #00e0ff 100%);
+    
+    /* Glassmorphism Riguroso */
+    --color-glass-bg: rgba(255, 255, 255, 0.2); 
+    --blur-intensity: 18px; /* Más intenso y profesional */
+    --border-glass: 1px solid rgba(255, 255, 255, 0.4);
+    
+    /* Estilos Generales */
+    --border-radius-lg: 24px;
+    --border-radius-sm: 12px;
+    --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-glass: 0 10px 40px 0 rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    
+    /* Transiciones */
+    --transition-fast: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Reset y Tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7; /* Ligeramente más espaciado para mejor legibilidad */
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+    font-weight: 800; /* Más peso para impacto */
+    color: var(--color-text-dark);
+}
+
+p {
+    color: #4b5563;
+}
+
+/* --------------------
+    UTILIDADES
+   -------------------- */
+.section-padding {
+    padding: 120px 5%; /* Más aire */
+    max-width: 1400px; /* Ancho máximo para no saturar */
+    margin: 0 auto;
+}
+
+.tagline {
+    text-align: center;
+    color: var(--color-primary);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    max-width: 800px;
+    margin: 20px auto 60px auto;
+    text-align: center;
+    font-size: 1.15em;
+    color: #64748b;
+}
+
+.highlight {
+    color: var(--color-primary);
+}
+
+.highlight-secondary {
+    color: var(--color-secondary);
+}
+
+
+/* ====================================
+   2. CABECERA/NAVBAR (GLASSMORPHIC STICKY)
+   ==================================== */
+#navbar {
+    position: sticky; /* Sticky para mejor rendimiento de algunas apps */
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+    /* Aplicación de Glassmorphism */
+    background-color: var(--color-glass-bg);
+    backdrop-filter: blur(var(--blur-intensity));
+    -webkit-backdrop-filter: blur(var(--blur-intensity));
+    z-index: 1000;
+    border-bottom: var(--border-glass);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: var(--transition-fast);
+}
+
+/* Efecto al hacer scroll (implementado en JS y en CSS para fallback) */
+.scrolled {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: var(--shadow-glass) !important;
+    border-bottom: none !important;
+}
+
+.logo {
+    font-size: 1.9em;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.5px;
+}
+
+.logo-dot {
+    color: var(--color-primary);
+}
+
+.logo-img {
+    width: 50px; /* Ligeramente más pequeño, más elegante */
+    height: 50px;
+    margin-right: 12px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--shadow-subtle);
+}
+
+#navbar a {
+    color: var(--color-text-dark);
+    text-decoration: none;
+    margin-left: 35px;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+/* Indicador de hover más profesional */
+#navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-primary);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-out;
+    border-radius: 2px;
+}
+
+#navbar a:hover::after {
+    width: 100%;
+}
+
+#beta-btn {
+    background: var(--gradient-primary);
+    color: var(--color-text-light);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 35px;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+    transition: var(--transition-fast);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#beta-btn:hover {
+    background: var(--gradient-hover);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.5);
+}
+
+/* ====================================
+   3. SECCIÓN PRINCIPAL (HERO) - Efecto Ola
+   ==================================== */
+.hero {
+    min-height: 95vh; /* Ajuste para que la navbar se sienta mejor */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 180px; /* Más espacio para la navbar */
+    background: linear-gradient(135deg, #e0eaf4 0%, var(--color-background-light) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 50%;
+    z-index: 2;
+    animation: fadeInSlideRight 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 4.8em; /* Titular más grande y llamativo */
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.hero .highlight {
+    /* Efecto de degradado al texto */
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero .subtitle {
+    font-size: 1.6em;
+    color: #475569;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+.cta-group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.cta-btn {
+    padding: 16px 40px; /* Botones más robustos */
+    border-radius: 50px;
+    font-size: 1.15em;
+    transition: var(--transition-fast);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cta-btn.primary {
+    background: var(--gradient-primary);
+    color: var(--color-text-light);
+    box-shadow: 0 12px 35px rgba(0, 123, 255, 0.35);
+}
+
+.cta-btn.primary:hover {
+    background: var(--gradient-hover);
+    transform: translateY(-7px) scale(1.01);
+    box-shadow: 0 20px 50px rgba(0, 123, 255, 0.5);
+}
+
+.cta-link.beta-link {
+    /* Estilo de enlace más limpio */
+    color: var(--color-text-dark);
+    font-weight: 500;
+    font-size: 1.05em;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 2px;
+    position: static; /* Removido el posicionamiento absoluto */
+}
+
+.cta-link.beta-link:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+/* Contenedor de la Imagen: Más sofisticado */
+.hero-image {
+    position: relative;
+    width: 45%;
+    max-width: 650px;
+    z-index: 1;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    /* Efecto Glassmorphism sutil para el contenedor */
+    background-color: var(--color-glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: var(--border-glass);
+    box-shadow: var(--shadow-glass), 0 0 40px rgba(0, 123, 255, 0.1); /* Sombra con un toque azul */
+    animation: floatImage 8s ease-in-out infinite, fadeInScale 1s ease-out 0.5s forwards;
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Animaciones */
+@keyframes floatImage {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes fadeInSlideRight {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* ====================================
+   4. SECCIÓN DE SEGURIDAD (OSCURO)
+   ==================================== */
+.security-section {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    text-align: center;
+    /* Fondo con gradiente sutil */
+    background-image: radial-gradient(circle at top left, #1f3044 0%, var(--color-background-dark) 60%);
+}
+
+.security-section h2 {
+    color: var(--color-secondary);
+    font-size: 3.2em;
+}
+
+.security-section p {
+    color: #94a3b8;
+}
+
+.security-features {
+    display: flex;
+    justify-content: center; 
+    gap: 50px; /* Más separación */
+    margin-top: 50px;
+}
+
+.security-card {
+    /* Glassmorphism oscuro y elegante */
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(var(--blur-intensity));
+    -webkit-backdrop-filter: blur(var(--blur-intensity));
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    max-width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    transition: var(--transition-fast);
+}
+
+.security-card:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px var(--color-secondary); /* Efecto glow sutil */
+}
+
+.secure-logo {
+    width: 130px; 
+    height: 130px;
+    margin-bottom: 25px;
+}
+
+.secure-screen {
+    width: 100%;
+    height: 280px; 
+    object-fit: cover;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.security-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+
+/* ====================================
+   5. GRID DE CARACTERÍSTICAS (Didáctico)
+   ==================================== */
+.layers-section {
+    text-align: center;
+    background-color: #f0f4f8; /* Un fondo ligeramente azulado */
+}
+
+.layers-section h2 {
+    font-size: 3.2em;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.feature-card {
+    position: relative;
+    /* Aplicación de Glassmorphism */
+    background-color: var(--color-glass-bg);
+    backdrop-filter: blur(var(--blur-intensity));
+    -webkit-backdrop-filter: blur(var(--blur-intensity));
+    padding: 30px;
+    border-radius: var(--border-radius-lg);
+    text-align: left;
+    border: var(--border-glass);
+    box-shadow: var(--shadow-glass);
+    transition: var(--transition-fast);
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.15);
+    border-color: var(--color-primary); /* Borde de color */
+}
+
+/* Indicador de Capa (Didáctico) */
+.feature-card::before {
+    content: attr(data-layer);
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 8px 20px;
+    border-bottom-left-radius: var(--border-radius-lg);
+    font-weight: 700;
+    font-size: 0.85em;
+    z-index: 10;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.feature-card img {
+    width: 100%;
+    height: 220px; 
+    object-fit: cover;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-subtle);
+}
+
+.feature-card h3 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--color-text-dark);
+    font-size: 1.5em;
+}
+
+/* ====================================
+   6. SECCIÓN DE DISEÑO (FLUIDEZ)
+   ==================================== */
+.design-section {
+    background: linear-gradient(to bottom, #ffffff, #f0f7ff); /* Gradiente suave */
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.design-content {
+    max-width: 50%;
+    animation: fadeInSlideLeft 1s ease-out;
+}
+
+@keyframes fadeInSlideLeft {
+    0% { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.design-content h2 {
+    font-size: 3.2em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.design-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 35px;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius-lg);
+    padding: 20px;
+    background-color: var(--color-glass-bg);
+    backdrop-filter: blur(5px);
+}
+
+.design-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.design-list li:last-child {
+    border-bottom: none;
+}
+
+.design-list li .icon {
+    font-size: 1.2em;
+    margin-right: 15px;
+    color: var(--color-primary);
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.design-image {
+    width: 45%;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    border: 2px solid #fff;
+    transition: transform 0.5s;
+}
+
+.design-image:hover {
+    transform: scale(1.02) rotate(1deg);
+}
+
+.design-image img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* ====================================
+   7. PIE DE PÁGINA
+   ==================================== */
+footer {
+    background-color: var(--color-background-dark);
+    color: #94a3b8;
+    padding: 50px 5%;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.copyright {
+    letter-spacing: 0.5px;
+}
+
+.social-links a {
+    color: #94a3b8;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* ====================================
+   8. MEDIA QUERIES (RESPONSIVE)
+   ==================================== */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 4em;
+    }
+    .hero .subtitle {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 1000px) {
+    .hero-content {
+        max-width: 100%;
+    }
+    .hero-image {
+        display: none; 
+    }
+    .hero {
+        text-align: center;
+        padding-top: 120px;
+        min-height: 70vh;
+    }
+    .cta-group {
+        justify-content: center;
+    }
+    .design-section {
+        flex-direction: column;
+    }
+    .design-content, .design-image {
+        max-width: 100%;
+        width: 100%;
+    }
+    .design-section {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3em;
+    }
+    .hero .subtitle {
+        font-size: 1.1em;
+    }
+    .cta-group {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    #navbar nav {
+        display: none; 
+    }
+    .security-features {
+        flex-direction: column;
+        align-items: center;
+    }
+    .security-card {
+        max-width: 100%;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-links {
+        margin-top: 20px;
+    }
+}
