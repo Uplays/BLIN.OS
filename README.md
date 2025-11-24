@@ -41,7 +41,7 @@ El sistema opera en 4 capas para una interacción fluida, minimizando distraccio
 
 El enlace para acceder a la web oficial y la versión Beta es:
 
-* **Web Oficial (Página de Producto):** `https://uplays.github.io/BLIN.OS/`
+* **Web Oficial (Página de Producto):** https://uplays.github.io/BLIN.OS/
 
 ---
 
